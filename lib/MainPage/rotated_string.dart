@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'dart:math' as math;
 
 import 'package:flutter/material.dart';
@@ -21,7 +20,8 @@ class RotatedString extends StatelessWidget{
           angle: temp % 2 == 0 ? math.pi / 32 : -math.pi / 32,
           child: Text(
             style: const TextStyle(
-
+              fontFamily: 'Heavyweight',
+              fontSize: 28,
             ),
             char
           ),
@@ -32,7 +32,7 @@ class RotatedString extends StatelessWidget{
 
     return Container(
       color: Colors.green,
-      padding: const EdgeInsets.fromLTRB(0, 20, 0, 20),
+      padding: const EdgeInsets.fromLTRB(0, 20, 0, 10),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
