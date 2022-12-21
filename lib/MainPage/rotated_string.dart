@@ -32,7 +32,8 @@ class RotatedString extends StatelessWidget{
 
     return Container(
       color: Colors.green,
-      padding: const EdgeInsets.fromLTRB(0, 20, 0, 10),
+      padding: const EdgeInsets.fromLTRB(0, 10, 0, 10),
+      margin: const EdgeInsets.fromLTRB(0, 30, 0, 30),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [

@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:project/MainPage/rotated_string.dart';
+import 'package:provider/provider.dart';
+
+import '../StateManager/state_manager.dart';
 
 class StartMenu extends StatelessWidget{
 
@@ -23,13 +26,19 @@ class StartMenu extends StatelessWidget{
             padding: const EdgeInsets.fromLTRB(20, 20, 20, 20),
             child: SizedBox(
               width: 100,
-              height: 200,
+              height: 400,
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
-                children: const [
-                  RotatedString(stringToRotate: "Start"),
-                  RotatedString(stringToRotate: "Settings"),
-                  RotatedString(stringToRotate: "Quit"),
+                children: [
+                  GestureDetector(
+                    onTap: () {
+                      Provider.of<StateManager>(context, listen: false).setCurrentState = "";
+                      print("Test");
+                    },
+                    child: const RotatedString(stringToRotate: "Start"),
+                  ),
+                  const RotatedString(stringToRotate: "Settings"),
+                  const RotatedString(stringToRotate: "Quit"),
                 ],
               ),
             )
