@@ -15,14 +15,18 @@ class StartMenu extends StatelessWidget{
         backgroundColor: const Color(0xff6ec1c01),
       ),
       body: Container(
-        color: const Color(0xffA33612),
+        color: const Color(0xffBA3002),
         alignment: Alignment.center,
         child: SizedBox(
           width: 200 + MediaQuery.of(context).size.width * 0.25,
           height:  200 + MediaQuery.of(context).size.height * 0.25,
           child: Container(
-            color: Colors.orange,
             alignment: Alignment.center,
+            decoration: BoxDecoration(
+              color: const Color(0xffA33612),
+              border: Border.all(color: Colors.black, width: 1, style: BorderStyle.solid),
+              borderRadius: const BorderRadius.all(Radius.circular(20)),
+            ),
             padding: const EdgeInsets.fromLTRB(20, 20, 20, 20),
             child: SizedBox(
               width: 100,
@@ -32,13 +36,25 @@ class StartMenu extends StatelessWidget{
                 children: [
                   GestureDetector(
                     onTap: () {
-                      Provider.of<StateManager>(context, listen: false).setCurrentState = "";
+                      Provider.of<StateManager>(context, listen: false).setCurrentState = "GamePage";
                       print("Test");
                     },
-                    child: const RotatedString(stringToRotate: "Start"),
+                    child: Container(
+                      padding: const EdgeInsets.fromLTRB(0, 10, 0, 10),
+                      margin: const EdgeInsets.fromLTRB(0, 10, 0, 0),
+                      child: const RotatedString(stringToRotate: "Start", fontSize: 20, alignment: MainAxisAlignment.center, color: Color(0xff008C6C)),
+                    ),
                   ),
-                  const RotatedString(stringToRotate: "Settings"),
-                  const RotatedString(stringToRotate: "Quit"),
+                  Container(
+                    padding: const EdgeInsets.fromLTRB(0, 10, 0, 10),
+                    margin: const EdgeInsets.fromLTRB(0, 10, 0, 0),
+                    child: const RotatedString(stringToRotate: "Settings", fontSize: 20, alignment: MainAxisAlignment.center, color: Color(0xff008C6C)),
+                  ),
+                  Container(
+                    padding: const EdgeInsets.fromLTRB(0, 10, 0, 10),
+                    margin: const EdgeInsets.fromLTRB(0, 10, 0, 0),
+                    child: const RotatedString(stringToRotate: "Quit", fontSize: 20, alignment: MainAxisAlignment.center, color: Color(0xff008C6C)),
+                  ),
                 ],
               ),
             )
@@ -47,6 +63,4 @@ class StartMenu extends StatelessWidget{
       ),
     );
   }
-
-
 }

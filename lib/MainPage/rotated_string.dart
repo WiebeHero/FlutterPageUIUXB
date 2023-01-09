@@ -5,8 +5,11 @@ import 'package:flutter/material.dart';
 class RotatedString extends StatelessWidget{
 
   final String stringToRotate;
+  final double fontSize;
+  final MainAxisAlignment alignment;
+  final Color? color;
 
-  const RotatedString({super.key, required this.stringToRotate});
+  const RotatedString({super.key, required this.stringToRotate, required this.fontSize, required this.alignment, this.color});
 
   @override
   Widget build(BuildContext context) {
@@ -19,9 +22,10 @@ class RotatedString extends StatelessWidget{
         Transform.rotate(
           angle: temp % 2 == 0 ? math.pi / 32 : -math.pi / 32,
           child: Text(
-            style: const TextStyle(
+            style: TextStyle(
+              color: color ?? Colors.black,
               fontFamily: 'Heavyweight',
-              fontSize: 28,
+              fontSize: fontSize,
             ),
             char
           ),
@@ -30,16 +34,11 @@ class RotatedString extends StatelessWidget{
       temp++;
     }
 
-    return Container(
-      color: Colors.green,
-      padding: const EdgeInsets.fromLTRB(0, 10, 0, 10),
-      margin: const EdgeInsets.fromLTRB(0, 30, 0, 30),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.center,
+    return  Row(
+        mainAxisAlignment: alignment,
         children: [
           for(var i in strings) i,
         ],
-      ),
     );
   }
 
