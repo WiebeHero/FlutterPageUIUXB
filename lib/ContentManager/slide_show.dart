@@ -5,7 +5,7 @@ import 'package:project/GamePage/accessibility_drawer.dart';
 import 'package:project/MainPage/rotated_string.dart';
 import 'package:provider/provider.dart';
 
-import '../ContentManager/content_manager.dart';
+import 'content_manager.dart';
 import '../StateManager/state_manager.dart';
 
 class SlideShow extends StatefulWidget{

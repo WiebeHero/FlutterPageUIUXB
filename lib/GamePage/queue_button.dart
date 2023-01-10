@@ -19,7 +19,7 @@ class QueueButton extends StatelessWidget{
         alignment: Alignment.topLeft,
         child: GestureDetector(
           onTap: (){
-            Provider.of<ContentManager>(context, listen: false).setCurrentContent = "Inventory";
+
           },
           child: Stack(
             children: [
