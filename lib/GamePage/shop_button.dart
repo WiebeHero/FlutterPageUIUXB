@@ -16,21 +16,24 @@ class ShopButton extends StatelessWidget{
       onTap: (){
         Provider.of<ContentManager>(context, listen: false).setCurrentContent = "Shop";
       },
-      child: SizedBox(
-        width: 100,
-        height: 100,
-        child: Container(
-          alignment: Alignment.center,
-          decoration: BoxDecoration(
-            color: const Color(0xff00BA8F),
-            shape: BoxShape.circle,
-            border: Border.all(
-              color: Colors.grey,
-              width: 1.0,
-              style: BorderStyle.solid,
+      child: MouseRegion(
+        cursor: SystemMouseCursors.click,
+        child: SizedBox(
+          width: 100,
+          height: 100,
+          child: Container(
+            alignment: Alignment.center,
+            decoration: BoxDecoration(
+              color: const Color(0xff00BA8F),
+              shape: BoxShape.circle,
+              border: Border.all(
+                color: Colors.grey,
+                width: 1.0,
+                style: BorderStyle.solid,
+              ),
             ),
+            child: const RotatedString(stringToRotate: "Shop", fontSize: 28, alignment: MainAxisAlignment.center,),
           ),
-          child: const RotatedString(stringToRotate: "Shop", fontSize: 28, alignment: MainAxisAlignment.center,),
         ),
       ),
     );

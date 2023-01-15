@@ -22,17 +22,19 @@ class _Shop extends State<Shop> with TickerProviderStateMixin{
   double offsetX = 0;
   double offsetY = 0;
   double angle = 2;
-  late AnimationController controller;
+  late AnimationController moveRotatecontroller;
+  late AnimationController opacityController;
 
   @override
   void initState(){
     super.initState();
-    controller = AnimationController(duration: const Duration(seconds: 1), vsync: this);
+    moveRotatecontroller = AnimationController(duration: const Duration(seconds: 1), vsync: this);
+    opacityController = AnimationController(duration: const Duration(seconds: 1), vsync: this);
   }
 
   @override
   void dispose(){
-    controller.dispose();
+    moveRotatecontroller.dispose();
     super.dispose();
   }
 
@@ -44,7 +46,6 @@ class _Shop extends State<Shop> with TickerProviderStateMixin{
         width: 500,
         height: 800,
         child: Container(
-          color: Colors.black,
           alignment: Alignment.topCenter,
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
@@ -57,18 +58,29 @@ class _Shop extends State<Shop> with TickerProviderStateMixin{
                 child: Stack(
                   children: [
                     for(int i = 0; i < 4; i++) RotationTransition(
-                      turns: Tween(begin: angle * i / 180 * pi, end: 0.0).animate(controller),
+                      turns: Tween(begin: angle * i / 180 * pi, end: 0.0).animate(moveRotatecontroller),
                       child: SlideTransition(
-                        position: Tween<Offset>(begin: Offset.zero, end: Offset(-2.0 + i * 1.33, 1.5)).animate(controller),
+                        position: Tween<Offset>(begin: Offset.zero, end: Offset(-2.0 + i * 1.33, 1.5)).animate(moveRotatecontroller),
                         child: SizedBox(
                           width: 100,
                           height: 150,
                           child: Container(
+                            alignment: Alignment.center,
                             decoration: BoxDecoration(
                               color: Colors.green,
                               borderRadius: BorderRadius.circular(20),
                               border: Border.all(color: Colors.black, width: 2, style: BorderStyle.solid),
                             ),
+                            child: FadeTransition(
+                              opacity: Tween<double>(begin: 0, end: 1.0).animate(opacityController),
+                              child: Container(
+                                width: 90,
+                                height: 135,
+                                child: Image.asset(
+                                  "images/MushroomRed.png",
+                                ),
+                              ),
+                            )
                           ),
                         ),
                       ),
@@ -79,15 +91,19 @@ class _Shop extends State<Shop> with TickerProviderStateMixin{
               GestureDetector(
                 onTap: (){
                   setState(() {
-                    print("Testing");
-                    controller.forward().whenComplete(() => {
-                      controller.reverse(),
+                    moveRotatecontroller.forward().whenComplete(() => {
+                      opacityController.forward().whenComplete(() async => {
+                        await Future.delayed(const Duration(seconds: 1), (){}),
+                        opacityController.reverse(),
+                        await Future.delayed(const Duration(seconds: 1), (){}),
+                        moveRotatecontroller.reverse(),
+                      }),
                     });
                   });
                 },
                 child: SizedBox(
-                  width: 200,
-                  height: 100,
+                  width: 300,
+                  height: 150,
                   child: Container(
                     color: Colors.blue,
                   ),

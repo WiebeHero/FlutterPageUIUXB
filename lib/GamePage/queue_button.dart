@@ -12,48 +12,51 @@ class QueueButton extends StatelessWidget{
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      width: 400,
-      height: 100,
-      child: Container(
-        alignment: Alignment.topLeft,
-        child: GestureDetector(
-          onTap: (){
+    return MouseRegion(
+      cursor: SystemMouseCursors.click,
+      child: SizedBox(
+        width: 400,
+        height: 100,
+        child: Container(
+          alignment: Alignment.topLeft,
+          child: GestureDetector(
+            onTap: (){
 
-          },
-          child: Stack(
-            children: [
-              Transform.translate(
-                offset: const Offset(300, 11),
-                child: CustomPaint(size: const Size(50, 80), painter: DrawTriangle()),
-              ),
-              Transform.translate(
-                offset: const Offset(100, 11),
-                child: Container(
-                  color: const Color(0xff00BA8F),
-                  width: 200,
-                  height: 80,
-                  child: const RotatedString(
-                    stringToRotate: "Queue",
-                    fontSize: 28,
-                    alignment: MainAxisAlignment.center,
-                  )
+            },
+            child: Stack(
+              children: [
+                Transform.translate(
+                  offset: const Offset(300, 11),
+                  child: CustomPaint(size: const Size(50, 80), painter: DrawTriangle()),
                 ),
-              ),
-              Container(
-                width: 150,
-                height: 100,
-                decoration: BoxDecoration(
-                  color: const Color(0xff6EC1C01),
-                  shape: BoxShape.circle,
-                  border: Border.all(
-                    color: Colors.grey,
-                    width: 1.0,
-                    style: BorderStyle.solid,
+                Transform.translate(
+                  offset: const Offset(100, 11),
+                  child: Container(
+                    color: const Color(0xff00BA8F),
+                    width: 200,
+                    height: 80,
+                    child: const RotatedString(
+                      stringToRotate: "Queue",
+                      fontSize: 28,
+                      alignment: MainAxisAlignment.center,
+                    )
                   ),
                 ),
-              ),
-            ],
+                Container(
+                  width: 150,
+                  height: 100,
+                  decoration: BoxDecoration(
+                    color: const Color(0xff6EC1C01),
+                    shape: BoxShape.circle,
+                    border: Border.all(
+                      color: Colors.grey,
+                      width: 1.0,
+                      style: BorderStyle.solid,
+                    ),
+                  ),
+                ),
+              ],
+            ),
           ),
         ),
       ),

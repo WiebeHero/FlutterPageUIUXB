@@ -37,29 +37,34 @@ class StartMenu extends StatelessWidget{
                   GestureDetector(
                     onTap: () {
                       Provider.of<StateManager>(context, listen: false).setCurrentState = "GamePage";
-                      print("Test");
                     },
-                    child: Container(
-                      padding: const EdgeInsets.fromLTRB(0, 10, 0, 10),
-                      margin: const EdgeInsets.fromLTRB(0, 10, 0, 0),
-                      child: const RotatedString(stringToRotate: "Start", fontSize: 20, alignment: MainAxisAlignment.center, color: Color(0xff008C6C)),
-                    ),
+                    child: const _MainMenuButton(text: "Start"),
                   ),
-                  Container(
-                    padding: const EdgeInsets.fromLTRB(0, 10, 0, 10),
-                    margin: const EdgeInsets.fromLTRB(0, 10, 0, 0),
-                    child: const RotatedString(stringToRotate: "Settings", fontSize: 20, alignment: MainAxisAlignment.center, color: Color(0xff008C6C)),
-                  ),
-                  Container(
-                    padding: const EdgeInsets.fromLTRB(0, 10, 0, 10),
-                    margin: const EdgeInsets.fromLTRB(0, 10, 0, 0),
-                    child: const RotatedString(stringToRotate: "Quit", fontSize: 20, alignment: MainAxisAlignment.center, color: Color(0xff008C6C)),
-                  ),
+                  const _MainMenuButton(text: "Settings"),
+                  const _MainMenuButton(text: "Quit"),
                 ],
               ),
             )
           ),
         ),
+      ),
+    );
+  }
+}
+
+class _MainMenuButton extends StatelessWidget {
+
+  final String text;
+  const _MainMenuButton({super.key, required this.text});
+
+  @override
+  Widget build(BuildContext context) {
+    return MouseRegion(
+      cursor: SystemMouseCursors.click,
+      child: Container(
+        padding: const EdgeInsets.fromLTRB(0, 10, 0, 10),
+        margin: const EdgeInsets.fromLTRB(0, 10, 0, 0),
+        child: RotatedString(stringToRotate: text, fontSize: 20, alignment: MainAxisAlignment.center, color: Color(0xff008C6C)),
       ),
     );
   }
