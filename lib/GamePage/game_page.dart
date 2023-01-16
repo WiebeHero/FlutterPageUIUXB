@@ -19,6 +19,8 @@ class GamePage extends StatelessWidget{
       drawer: const AccessibilityDrawer(),
       appBar: AppBar(
         backgroundColor: const Color(0xff6ec1c01),
+        title: const RotatedString(stringToRotate: "Cardbreaker: The impact.", fontSize: 36, alignment: MainAxisAlignment.center,),
+        centerTitle: true,
       ),
       body: Container(
         color: const Color(0xffBA3002),

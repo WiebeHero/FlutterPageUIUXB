@@ -105,7 +105,9 @@ class _Shop extends State<Shop> with TickerProviderStateMixin{
                   width: 300,
                   height: 150,
                   child: Container(
-                    color: Colors.blue,
+                    alignment: Alignment.center,
+                    color: const Color(0xff008C6C),
+                    child: const RotatedString(stringToRotate: "Pull for cards", fontSize: 26, alignment: MainAxisAlignment.center,),
                   ),
                 ),
               )

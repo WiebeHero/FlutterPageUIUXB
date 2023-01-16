@@ -21,19 +21,19 @@ class AccessibilityDrawer extends StatelessWidget{
             leading: Icon(
               Icons.person,
             ),
-            title: RotatedString(stringToRotate: "Account", fontSize: 20, alignment: MainAxisAlignment.start,),
+            title: MouseRegion(cursor: SystemMouseCursors.click, child: RotatedString(stringToRotate: "Account", fontSize: 20, alignment: MainAxisAlignment.start,)),
           ),
           ListTile(
             leading: Icon(
               Icons.dashboard,
             ),
-            title: RotatedString(stringToRotate: "Card Archive", fontSize: 20, alignment: MainAxisAlignment.start,),
+            title: MouseRegion(cursor: SystemMouseCursors.click, child: RotatedString(stringToRotate: "Card Archive", fontSize: 20, alignment: MainAxisAlignment.start,)),
           ),
           ListTile(
             leading: Icon(
               Icons.quiz,
             ),
-            title: RotatedString(stringToRotate: "FAQ", fontSize: 20, alignment: MainAxisAlignment.start,),
+            title: MouseRegion(cursor: SystemMouseCursors.click, child: RotatedString(stringToRotate: "FAQ", fontSize: 20, alignment: MainAxisAlignment.start,)),
           ),
           /*ListTile(
             leading: Icon(

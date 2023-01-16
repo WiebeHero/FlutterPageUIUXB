@@ -4,7 +4,7 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:project/ContentManager/Cards/inventory_manager.dart';
 import 'package:project/GamePage/accessibility_drawer.dart';
-import 'package:project/MainPage/rotated_string.dart';
+import 'package:provider/provider.dart';
 
 import 'Cards/custom_card.dart';
 import 'Cards/playcard.dart';
@@ -20,7 +20,7 @@ class Inventory extends StatefulWidget{
 
 }
 
-class _Inventory extends State<Inventory> with TickerProviderStateMixin{
+class _Inventory extends State<Inventory>{
 
   @override
   void initState(){
@@ -33,31 +33,57 @@ class _Inventory extends State<Inventory> with TickerProviderStateMixin{
     super.dispose();
   }
 
+  List<PlayCard> calculate(int i){
+    List<PlayCard> cards = <PlayCard>[];
+    for(int x = 0; x < 9; x++) {
+      String xandi = "$i$x";
+      int transfer = int.parse(xandi);
+      cards.add(transfer < InventoryManager.cardsOwned.length && InventoryManager.cardsOwned[transfer].getAmount() > 0 ? PlayCard(card: InventoryManager.cardsOwned[transfer]) : const PlayCard());
+    }
+    return cards;
+  }
+
   @override
   Widget build(BuildContext context) {
     return Transform.translate(
       offset: const Offset(0, 0),
       child: SizedBox(
         width: 1000,
-        height: 680,
+        height: 684,
         child: Container(
           alignment: Alignment.topCenter,
-          padding: const EdgeInsets.all(20),
+          padding: const EdgeInsets.fromLTRB(20, 0, 0, 20),
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(25),
-            color: Colors.black,
+            color: const Color(0xff00BA8F),
           ),
           child: Column(
             children: [
-              //was 4
-              for(int i = 0; i < 4; i++) Row(
+              SizedBox(
+                width: 990,
+                height: 30,
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  children: [
+                    IconButton(
+                      onPressed: () {
+                        Provider.of<ContentManager>(context, listen: false).setCurrentContent = "SlideShow";
+                      },
+                      icon: const Icon(Icons.close),
+                    ),
+                  ],
+                )
+              ),
+              Column(
                 children: [
-                  //was 9
-                  for(int x = 0; x < 9; x++) x * i < InventoryManager.cardsOwned.length ? PlayCard(card: InventoryManager.cardsOwned[x * i]) : const PlayCard()
+                  //was 4
+                  for(int i = 0; i < 4; i++) Row(
+                    children: calculate(i),
+                  ),
                 ],
               ),
             ],
-          ),
+          )
         ),
       ),
     );
