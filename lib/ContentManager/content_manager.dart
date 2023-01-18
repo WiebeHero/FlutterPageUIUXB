@@ -1,6 +1,7 @@
 import 'dart:collection';
 
 import 'package:flutter/cupertino.dart';
+import 'package:project/ContentManager/card_archive.dart';
 import 'package:project/ContentManager/inventory.dart';
 import 'package:project/ContentManager/shop.dart';
 import 'package:project/ContentManager/slide_show.dart';
@@ -16,7 +17,7 @@ class ContentManager extends ChangeNotifier{
   UnmodifiableMapView<String, Widget> get widgets => UnmodifiableMapView(_widgets);
 
   ContentManager(){
-    _widgets.addAll({"SlideShow": const SlideShow(), "Shop": const Shop(), "Inventory" : const Inventory()});
+    _widgets.addAll({"SlideShow": const SlideShow(), "Shop": const Shop(), "Inventory" : const Inventory(), "CardArchive": const CardArchive()});
   }
 
   set setCurrentContent(String newContent) {

@@ -34,11 +34,23 @@ class _Inventory extends State<Inventory>{
   }
 
   List<PlayCard> calculate(int i){
+    int offset = 0;
     List<PlayCard> cards = <PlayCard>[];
-    for(int x = 0; x < 9; x++) {
+    for(int x = 0; x < 9 + offset; x++) {
       String xandi = "$i$x";
       int transfer = int.parse(xandi);
-      cards.add(transfer < InventoryManager.cardsOwned.length && InventoryManager.cardsOwned[transfer].getAmount() > 0 ? PlayCard(card: InventoryManager.cardsOwned[transfer]) : const PlayCard());
+      if(transfer < InventoryManager.cardsOwned.length){
+        if(InventoryManager.cardsOwned[transfer].getAmount() > 0){
+          cards.add(PlayCard(card: InventoryManager.cardsOwned[transfer], enableText: true, ignoreAmountRule: false,));
+        }
+        else{
+          offset += 1;
+        }
+      }
+      else{
+        cards.add(const PlayCard(enableText: false, ignoreAmountRule: false,));
+      }
+
     }
     return cards;
   }

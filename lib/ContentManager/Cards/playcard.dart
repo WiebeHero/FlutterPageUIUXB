@@ -5,7 +5,8 @@ import 'custom_card.dart';
 class PlayCard extends StatefulWidget{
 
   final CustomCard? card;
-  const PlayCard({super.key, this.card});
+  final bool enableText, ignoreAmountRule;
+  const PlayCard({super.key, this.card, required this.enableText, required this.ignoreAmountRule});
 
   @override
   State<StatefulWidget> createState() => _PlayCard();
@@ -51,9 +52,9 @@ class _PlayCard extends State<PlayCard> with TickerProviderStateMixin{
             border: Border.all(color: Colors.black, width: 2, style: BorderStyle.solid),
             gradient: RadialGradient(
               colors: [
-                widget.card == null ? const Color(0xff008C6C) : widget.card!.rarity.color,
-                widget.card == null ? const Color(0xff008C6C) : widget.card!.rarity.color.withOpacity(0.5),
-                widget.card == null ? const Color(0xff008C6C) : widget.card!.rarity.color.withOpacity(0.3),
+                widget.card == null ? const Color(0xff008C6C) : widget.card!.getRarity().color,
+                widget.card == null ? const Color(0xff008C6C) : widget.card!.getRarity().color.withOpacity(0.5),
+                widget.card == null ? const Color(0xff008C6C) : widget.card!.getRarity().color.withOpacity(0.3),
                 const Color(0xff008C6C)
               ],
               stops: const[
@@ -93,7 +94,7 @@ class _PlayCard extends State<PlayCard> with TickerProviderStateMixin{
                 child: widget.card == null ? Container() : Opacity(
                   opacity: 0.6,
                   child: Image.asset(
-                    widget.card != null && widget.card?.getAmount() != 0 ? widget.card!.getAsset() : "",
+                    widget.card != null && widget.card?.getAmount() != (widget.ignoreAmountRule ? 1 : 0) ? widget.card!.getAsset() : "",
                   ),
                 ),
               ),
@@ -127,7 +128,7 @@ class _PlayCard extends State<PlayCard> with TickerProviderStateMixin{
                   crossAxisAlignment: CrossAxisAlignment.end,
                   children: [
                     Text(
-                      "x${widget.card!.getAmount()}",
+                      widget.enableText ? "x${widget.card!.getAmount()}" : "",
                       style: const TextStyle(
                         fontSize: 26,
                         fontFamily: 'Heavyweight',

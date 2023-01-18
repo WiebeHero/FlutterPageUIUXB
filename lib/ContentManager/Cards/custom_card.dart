@@ -3,11 +3,13 @@ import 'package:flutter/material.dart';
 
 class CustomCard{
 
-  late final int _amount, _health, _damage;
+  late final String _identifier;
+  late final int _health, _damage;
+  late int _amount;
   late final String _asset;
-  late final Rarity rarity;
+  late final Rarity _rarity;
 
-  CustomCard(this._health, this._damage, this._amount, this.rarity, this._asset);
+  CustomCard(this._identifier, this._health, this._damage, this._amount, this._rarity, this._asset);
 
   int getHealth() => _health;
 
@@ -15,8 +17,15 @@ class CustomCard{
 
   int getAmount() => _amount;
 
+  int setAmount(int value) => _amount = value;
+
   String getAsset() => _asset;
+
+  String getIdentifier() => _identifier;
+
+  Rarity getRarity() => _rarity;
 }
+
 enum Rarity{
   common,
   rare,
@@ -24,6 +33,7 @@ enum Rarity{
   legendary,
   heroic
 }
+
 extension ColorExtension on Rarity{
   String get name => describeEnum(this);
   Color get color  {

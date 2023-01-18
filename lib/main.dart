@@ -9,8 +9,11 @@ import 'StateManager/state_manager.dart';
 
 
 void main() {
-  InventoryManager.cardsOwned.add(CustomCard(3, 0, 4, Rarity.legendary, "images/MushroomRed.png"));
-  InventoryManager.cardsOwned.add(CustomCard(1, 2, 2, Rarity.rare, "images/MushroomBlue.png"));
+  InventoryManager.cardsOwned.add(CustomCard("MushroomRed", 3, 0, 0, Rarity.common, "images/MushroomRed.png"));
+  InventoryManager.cardsOwned.add(CustomCard("MushroomBlue", 1, 2, 0, Rarity.rare, "images/MushroomBlue.png"));
+  InventoryManager.cardsOwned.add(CustomCard("MushroomYellow", 2, 2, 0, Rarity.epic, "images/MushroomYellow.png"));
+  InventoryManager.cardsOwned.add(CustomCard("MushroomGreen", 4, 1, 0, Rarity.legendary, "images/MushroomGreen.png"));
+  InventoryManager.cardsOwned.add(CustomCard("MushroomGreen", 4, 4, 0, Rarity.heroic, "images/MushroomGreen.png"));
   runApp(const MyApp());
 }
 

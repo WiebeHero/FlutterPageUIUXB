@@ -15,37 +15,37 @@ class GamePage extends StatelessWidget{
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      drawer: const AccessibilityDrawer(),
-      appBar: AppBar(
-        backgroundColor: const Color(0xff6ec1c01),
-        title: const RotatedString(stringToRotate: "Cardbreaker: The impact.", fontSize: 36, alignment: MainAxisAlignment.center,),
-        centerTitle: true,
-      ),
-      body: Container(
-        color: const Color(0xffBA3002),
-        alignment: Alignment.center,
-        child: Stack(
-          children: [
-            Container(
-              alignment: Alignment.bottomLeft,
-              child: Transform.translate(
-                offset: const Offset(0, -10),
-                child: const QueueButton(),
-              ),
+    return ChangeNotifierProvider(
+      create: (context) => ContentManager(),
+      child: Builder(
+        builder: (BuildContext context) {
+          ContentManager contentManager = Provider.of<ContentManager>(context, listen: false);
+          Widget currentWidget = Container();
+          contentManager.widgets.forEach((key, value) {
+            if(key.compareTo(Provider.of<ContentManager>(context).getCurrentContent) == 0){
+              currentWidget = value;
+            }
+          });
+          return Scaffold(
+            drawer: const AccessibilityDrawer(),
+            appBar: AppBar(
+              backgroundColor: const Color(0xff6ec1c01),
+              title: const RotatedString(stringToRotate: "Cardbreaker: The impact.", fontSize: 36, alignment: MainAxisAlignment.center,),
+              centerTitle: true,
             ),
-            ChangeNotifierProvider(
-              create: (context) => ContentManager(),
-              child: Builder(
-                builder: (BuildContext context) {
-                  ContentManager contentManager = Provider.of<ContentManager>(context, listen: false);
-                  Widget currentWidget = Container();
-                  contentManager.widgets.forEach((key, value) {
-                    if(key.compareTo(Provider.of<ContentManager>(context).getCurrentContent) == 0){
-                      currentWidget = value;
-                    }
-                  });
-                  return Stack(
+            body: Container(
+              color: const Color(0xffBA3002),
+              alignment: Alignment.center,
+              child: Stack(
+                children: [
+                  Container(
+                    alignment: Alignment.bottomLeft,
+                    child: Transform.translate(
+                      offset: const Offset(0, -10),
+                      child: const QueueButton(),
+                    ),
+                  ),
+                  Stack(
                     alignment: Alignment.center,
                     children: [
                       currentWidget,
@@ -64,13 +64,12 @@ class GamePage extends StatelessWidget{
                         ),
                       ),
                     ],
-                  );
-                },
-              ),
+                  ),
+              ],
             ),
-          ],
-        ),
-      ),
+          ),
+        );
+      }),
     );
   }
 }
