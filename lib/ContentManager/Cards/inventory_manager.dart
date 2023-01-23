@@ -5,6 +5,7 @@ import 'package:project/ContentManager/Cards/custom_card.dart';
 class InventoryManager{
 
   static List<CustomCard> cardsOwned = <CustomCard>[];
+  static int money = 500;
 
   static CustomCard getRandomCard(Rarity rarity){
     late CustomCard customCard;

@@ -95,7 +95,7 @@ class _Inventory extends State<Inventory>{
                 ],
               ),
             ],
-          )
+          ),
         ),
       ),
     );
