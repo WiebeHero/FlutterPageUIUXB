@@ -65,8 +65,12 @@ flutter:
   #   - images/a_dot_burr.jpeg
   #   - images/a_dot_ham.jpeg
   assets:
-    - assets/
     - assets/images/Heart.png
+    - assets/images/Sword.png
+    - assets/images/MushroomBlue.png
+    - assets/images/MushroomRed.png
+    - assets/images/MushroomGreen.png
+    - assets/images/MushroomYellow.png
   fonts:
     - family: Heavyweight
       fonts:
