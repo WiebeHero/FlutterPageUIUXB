@@ -1,7 +1,7 @@
 # project
 
 A new Flutter project.
-Link: https://wiebehero.github.io/FlutterPageUIUX/
+Link: https://wiebehero.github.io/FlutterPageUIUXB/
 
 ## Getting Started
 
