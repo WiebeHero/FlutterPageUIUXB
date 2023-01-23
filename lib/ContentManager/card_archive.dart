@@ -60,7 +60,7 @@ class _CardArchive extends State<CardArchive>{
             padding: const EdgeInsets.fromLTRB(20, 0, 0, 20),
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(25),
-              color: const Color(0xff00BA8F),
+              color: const Color(0xff14648F),
             ),
             child: Column(
               children: [

@@ -24,7 +24,7 @@ class ShopButton extends StatelessWidget{
           child: Container(
             alignment: Alignment.center,
             decoration: BoxDecoration(
-              color: const Color(0xff00BA8F),
+              color: const Color(0xff14648F),
               shape: BoxShape.circle,
               border: Border.all(
                 color: Colors.grey,

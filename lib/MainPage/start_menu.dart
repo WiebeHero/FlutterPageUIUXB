@@ -12,12 +12,12 @@ class StartMenu extends StatelessWidget{
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: const Color(0xff6ec1c01),
+        backgroundColor: const Color(0xff9E6A26),
         title: const RotatedString(stringToRotate: "Cardbreaker: The impact.", fontSize: 36, alignment: MainAxisAlignment.center,),
         centerTitle: true,
       ),
       body: Container(
-        color: const Color(0xffBA3002),
+        color: const Color(0xff9E6A26),
         alignment: Alignment.center,
         child: SizedBox(
           width: 200 + MediaQuery.of(context).size.width * 0.25,
@@ -25,7 +25,7 @@ class StartMenu extends StatelessWidget{
           child: Container(
             alignment: Alignment.center,
             decoration: BoxDecoration(
-              color: const Color(0xffA33612),
+              color: const Color(0xffFFC170),
               border: Border.all(color: Colors.black, width: 1, style: BorderStyle.solid),
               borderRadius: const BorderRadius.all(Radius.circular(20)),
             ),
@@ -66,7 +66,7 @@ class _MainMenuButton extends StatelessWidget {
       child: Container(
         padding: const EdgeInsets.fromLTRB(0, 10, 0, 10),
         margin: const EdgeInsets.fromLTRB(0, 10, 0, 0),
-        child: RotatedString(stringToRotate: text, fontSize: 20, alignment: MainAxisAlignment.center, color: Color(0xff008C6C)),
+        child: RotatedString(stringToRotate: text, fontSize: 20, alignment: MainAxisAlignment.center),
       ),
     );
   }

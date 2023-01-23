@@ -47,15 +47,15 @@ class _PlayCard extends State<PlayCard> with TickerProviderStateMixin{
           margin: const EdgeInsets.all(3),
           alignment: Alignment.center,
           decoration: BoxDecoration(
-            color: const Color(0xff008C6C),
+            color: const Color(0xff3981A8),
             borderRadius: BorderRadius.circular(20),
             border: Border.all(color: Colors.black, width: 2, style: BorderStyle.solid),
             gradient: RadialGradient(
               colors: [
-                widget.card == null ? const Color(0xff008C6C) : widget.card!.getRarity().color,
-                widget.card == null ? const Color(0xff008C6C) : widget.card!.getRarity().color.withOpacity(0.5),
-                widget.card == null ? const Color(0xff008C6C) : widget.card!.getRarity().color.withOpacity(0.3),
-                const Color(0xff008C6C)
+                widget.card == null ? const Color(0xff3981A8) : widget.card!.getRarity().color,
+                widget.card == null ? const Color(0xff3981A8) : widget.card!.getRarity().color.withOpacity(0.5),
+                widget.card == null ? const Color(0xff3981A8) : widget.card!.getRarity().color.withOpacity(0.3),
+                const Color(0xff3981A8)
               ],
               stops: const[
                 0.3,

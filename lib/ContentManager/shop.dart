@@ -21,7 +21,7 @@ class Shop extends StatefulWidget{
 
 class _Shop extends State<Shop> with TickerProviderStateMixin{
 
-  double angle = 2;
+  double angle = 20;
   late AnimationController moveRotatecontroller;
   late AnimationController opacityController;
   List<CustomCard> cards = <CustomCard>[];
@@ -73,12 +73,12 @@ class _Shop extends State<Shop> with TickerProviderStateMixin{
       offset: const Offset(0, 0),
       child: SizedBox(
         width: 800,
-        height: 800,
+        height: 750,
         child: Container(
           alignment: Alignment.topCenter,
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(25),
-            color: const Color(0xff00BA8F),
+            color: const Color(0xff3981A8),
           ),
           child: Stack(
             children: [
@@ -90,7 +90,7 @@ class _Shop extends State<Shop> with TickerProviderStateMixin{
                   margin: const EdgeInsets.only(top: 25),
                   padding: const EdgeInsets.all(15),
                   decoration: const BoxDecoration(
-                    color: Color(0xff008C6C),
+                    color: Color(0xff14648F),
                     borderRadius: BorderRadius.all(Radius.circular(25)),
                   ),
                   child: Column(
@@ -114,7 +114,7 @@ class _Shop extends State<Shop> with TickerProviderStateMixin{
                   margin: const EdgeInsets.only(top: 25),
                   padding: const EdgeInsets.all(15),
                   decoration: const BoxDecoration(
-                    color: Color(0xff008C6C),
+                    color: Color(0xff14648F),
                     borderRadius: BorderRadius.all(Radius.circular(25)),
                   ),
                   child: Column(
@@ -130,7 +130,7 @@ class _Shop extends State<Shop> with TickerProviderStateMixin{
                   Container(
                     padding: const EdgeInsets.only(top: 100),
                     width: 300,
-                    height: 600,
+                    height: 550,
                     alignment: Alignment.topCenter,
                     child: Stack(
                       children: [
@@ -145,7 +145,7 @@ class _Shop extends State<Shop> with TickerProviderStateMixin{
                               margin: const EdgeInsets.all(3),
                               alignment: Alignment.center,
                               decoration: BoxDecoration(
-                                color: const Color(0xff008C6C),
+                                color: const Color(0xff14648F),
                                 borderRadius: BorderRadius.circular(20),
                                 border: Border.all(color: Colors.black, width: 2, style: BorderStyle.solid),
                               ),
@@ -162,7 +162,7 @@ class _Shop extends State<Shop> with TickerProviderStateMixin{
                                               cards[i].getRarity().color,
                                               cards[i].getRarity().color.withOpacity(0.5),
                                               cards[i].getRarity().color.withOpacity(0.3),
-                                              const Color(0xff008C6C)
+                                              const Color(0xff14648F)
                                             ],
                                             stops: const[
                                               0.3,
@@ -270,7 +270,7 @@ class _Shop extends State<Shop> with TickerProviderStateMixin{
                         height: 150,
                         child: Container(
                           alignment: Alignment.center,
-                          color: const Color(0xff008C6C),
+                          color: const Color(0xff14648F),
                           child: Column(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: const[

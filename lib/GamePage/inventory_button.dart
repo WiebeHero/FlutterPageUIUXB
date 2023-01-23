@@ -32,7 +32,7 @@ class InventoryButton extends StatelessWidget{
                 Transform.translate(
                   offset: const Offset(100, 11),
                   child: Container(
-                      color: const Color(0xff00BA8F),
+                      color: const Color(0xff14648F),
                       width: 200,
                       height: 80,
                       child: const RotatedString(
@@ -48,7 +48,7 @@ class InventoryButton extends StatelessWidget{
                     width: 100,
                     height: 100,
                     decoration: BoxDecoration(
-                      color: const Color(0xff6EC1C01),
+                      color: const Color(0xffEBA950),
                       shape: BoxShape.rectangle,
                       border: Border.all(
                         color: Colors.grey,
@@ -74,7 +74,7 @@ class DrawTriangle extends CustomPainter {
     path.lineTo(size.width, size.height / 2);
     path.lineTo(0, size.height);
     path.close();
-    canvas.drawPath(path, Paint()..color = const Color(0xff008C6C));
+    canvas.drawPath(path, Paint()..color = const Color(0xff3981A8));
   }
   @override
   bool shouldRepaint(CustomPainter oldDelegate) {
