@@ -73,8 +73,8 @@ class _PlayCard extends State<PlayCard> with TickerProviderStateMixin{
                 child: Row(
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
-                    Image.asset(
-                      "images/Heart.png",
+                    const Image(
+                      image: AssetImage("assets/images/Heart.png"),
                       width: 25,
                       height: 25,
                     ),
