@@ -66,6 +66,7 @@ flutter:
   #   - images/a_dot_ham.jpeg
   assets:
     - assets/images/Heart.png
+    - assets/images/Sword.png
   fonts:
     - family: Heavyweight
       fonts:
