@@ -34,11 +34,14 @@ class GamePage extends StatelessWidget{
             ),
             body: Container(
               color: const Color(0xff9E6A26),
-              alignment: Alignment.center,
+              alignment: Alignment.bottomCenter,
               child: Stack(
                 alignment: Alignment.bottomCenter,
                 children: [
-                  currentWidget,
+                  Container(
+                    margin: EdgeInsets.only(bottom: MediaQuery.of(context).size.height / 7.5),
+                      child: currentWidget
+                  ),
                   Container(
                     width: MediaQuery.of(context).size.width,
                     height: 75,
