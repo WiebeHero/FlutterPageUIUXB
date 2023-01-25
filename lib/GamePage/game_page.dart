@@ -46,66 +46,69 @@ class GamePage extends StatelessWidget{
                     width: MediaQuery.of(context).size.width,
                     height: 75,
                     color: const Color(0xff14648F),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        GestureDetector(
-                          onTap: (){
-                            Provider.of<ContentManager>(context, listen: false).setCurrentContent = "CardArchive";
-                          },
-                          child: Container(
-                            width: MediaQuery.of(context).size.width / 4,
-                            padding: const EdgeInsets.only(top: 7),
-                            alignment: Alignment.center,
-                            decoration: BoxDecoration(
-                              border: Border.all(color: const Color(0xff3981A8), width: 5),
+                    child: MouseRegion(
+                      cursor: SystemMouseCursors.click,
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          GestureDetector(
+                            onTap: (){
+                              Provider.of<ContentManager>(context, listen: false).setCurrentContent = "CardArchive";
+                            },
+                            child: Container(
+                              width: MediaQuery.of(context).size.width / 4,
+                              padding: const EdgeInsets.only(top: 7),
+                              alignment: Alignment.center,
+                              decoration: BoxDecoration(
+                                border: Border.all(color: const Color(0xff3981A8), width: 5),
+                              ),
+                              child: const RotatedString(stringToRotate: "Card Archive", fontSize: 40, alignment: MainAxisAlignment.center,),
                             ),
-                            child: const RotatedString(stringToRotate: "Card Archive", fontSize: 40, alignment: MainAxisAlignment.center,),
                           ),
-                        ),
-                        GestureDetector(
-                          onTap: (){
-                            Provider.of<ContentManager>(context, listen: false).setCurrentContent = "Inventory";
-                          },
-                          child: Container(
-                            width: MediaQuery.of(context).size.width / 4,
-                            padding: const EdgeInsets.only(top: 7),
-                            alignment: Alignment.center,
-                            decoration: BoxDecoration(
-                              border: Border.all(color: const Color(0xff3981A8), width: 5),
+                          GestureDetector(
+                            onTap: (){
+                              Provider.of<ContentManager>(context, listen: false).setCurrentContent = "Inventory";
+                            },
+                            child: Container(
+                              width: MediaQuery.of(context).size.width / 4,
+                              padding: const EdgeInsets.only(top: 7),
+                              alignment: Alignment.center,
+                              decoration: BoxDecoration(
+                                border: Border.all(color: const Color(0xff3981A8), width: 5),
+                              ),
+                              child: const RotatedString(stringToRotate: "Inventory", fontSize: 40, alignment: MainAxisAlignment.center,),
                             ),
-                            child: const RotatedString(stringToRotate: "Inventory", fontSize: 40, alignment: MainAxisAlignment.center,),
                           ),
-                        ),
-                        GestureDetector(
-                          onTap: (){
-                            Provider.of<ContentManager>(context, listen: false).setCurrentContent = "Queue";
-                          },
-                          child: Container(
-                            width: MediaQuery.of(context).size.width / 4,
-                            padding: const EdgeInsets.only(top: 7),
-                            alignment: Alignment.center,
-                            decoration: BoxDecoration(
-                              border: Border.all(color: const Color(0xff3981A8), width: 5),
+                          GestureDetector(
+                            onTap: (){
+                              Provider.of<ContentManager>(context, listen: false).setCurrentContent = "Queue";
+                            },
+                            child: Container(
+                              width: MediaQuery.of(context).size.width / 4,
+                              padding: const EdgeInsets.only(top: 7),
+                              alignment: Alignment.center,
+                              decoration: BoxDecoration(
+                                border: Border.all(color: const Color(0xff3981A8), width: 5),
+                              ),
+                              child: const RotatedString(stringToRotate: "Queue", fontSize: 40, alignment: MainAxisAlignment.center,),
                             ),
-                            child: const RotatedString(stringToRotate: "Queue", fontSize: 40, alignment: MainAxisAlignment.center,),
                           ),
-                        ),
-                        GestureDetector(
-                          onTap: (){
-                            Provider.of<ContentManager>(context, listen: false).setCurrentContent = "Shop";
-                          },
-                          child: Container(
-                            width: MediaQuery.of(context).size.width / 4,
-                            padding: const EdgeInsets.only(top: 7),
-                            alignment: Alignment.center,
-                            decoration: BoxDecoration(
-                              border: Border.all(color: const Color(0xff3981A8), width: 5),
+                          GestureDetector(
+                            onTap: (){
+                              Provider.of<ContentManager>(context, listen: false).setCurrentContent = "Shop";
+                            },
+                            child: Container(
+                              width: MediaQuery.of(context).size.width / 4,
+                              padding: const EdgeInsets.only(top: 7),
+                              alignment: Alignment.center,
+                              decoration: BoxDecoration(
+                                border: Border.all(color: const Color(0xff3981A8), width: 5),
+                              ),
+                              child: const RotatedString(stringToRotate: "Shop", fontSize: 40, alignment: MainAxisAlignment.center,),
                             ),
-                            child: const RotatedString(stringToRotate: "Shop", fontSize: 40, alignment: MainAxisAlignment.center,),
                           ),
-                        ),
-                      ],
+                        ],
+                      ),
                     )
                   )
                   /*Container(
