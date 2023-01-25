@@ -28,12 +28,12 @@ class GamePage extends StatelessWidget{
           });
           return Scaffold(
             appBar: AppBar(
-              backgroundColor: const Color(0xff9E6A26),
+              backgroundColor: const Color(0xff6ec1c01),
               title: const RotatedString(stringToRotate: "Cardbreaker: The impact.", fontSize: 36, alignment: MainAxisAlignment.center,),
               centerTitle: true,
             ),
             body: Container(
-              color: const Color(0xff9E6A26),
+              color: const Color(0xffBA3002),
               alignment: Alignment.bottomCenter,
               child: Stack(
                 alignment: Alignment.bottomCenter,
@@ -45,7 +45,7 @@ class GamePage extends StatelessWidget{
                   Container(
                     width: MediaQuery.of(context).size.width,
                     height: 75,
-                    color: const Color(0xff14648F),
+                    color: const Color(0xffBA3002),
                     child: MouseRegion(
                       cursor: SystemMouseCursors.click,
                       child: Row(
@@ -60,7 +60,7 @@ class GamePage extends StatelessWidget{
                               padding: const EdgeInsets.only(top: 7),
                               alignment: Alignment.center,
                               decoration: BoxDecoration(
-                                border: Border.all(color: const Color(0xff3981A8), width: 5),
+                                border: Border.all(color: const Color(0xff6ec1c01), width: 5),
                               ),
                               child: const RotatedString(stringToRotate: "Card Archive", fontSize: 40, alignment: MainAxisAlignment.center,),
                             ),
@@ -74,7 +74,7 @@ class GamePage extends StatelessWidget{
                               padding: const EdgeInsets.only(top: 7),
                               alignment: Alignment.center,
                               decoration: BoxDecoration(
-                                border: Border.all(color: const Color(0xff3981A8), width: 5),
+                                border: Border.all(color: const Color(0xff6ec1c01), width: 5),
                               ),
                               child: const RotatedString(stringToRotate: "Inventory", fontSize: 40, alignment: MainAxisAlignment.center,),
                             ),
@@ -88,7 +88,7 @@ class GamePage extends StatelessWidget{
                               padding: const EdgeInsets.only(top: 7),
                               alignment: Alignment.center,
                               decoration: BoxDecoration(
-                                border: Border.all(color: const Color(0xff3981A8), width: 5),
+                                border: Border.all(color: const Color(0xff6ec1c01), width: 5),
                               ),
                               child: const RotatedString(stringToRotate: "Queue", fontSize: 40, alignment: MainAxisAlignment.center,),
                             ),
@@ -102,7 +102,7 @@ class GamePage extends StatelessWidget{
                               padding: const EdgeInsets.only(top: 7),
                               alignment: Alignment.center,
                               decoration: BoxDecoration(
-                                border: Border.all(color: const Color(0xff3981A8), width: 5),
+                                border: Border.all(color: const Color(0xff6ec1c01), width: 5),
                               ),
                               child: const RotatedString(stringToRotate: "Shop", fontSize: 40, alignment: MainAxisAlignment.center,),
                             ),

@@ -67,7 +67,7 @@ class _Inventory extends State<Inventory>{
           padding: const EdgeInsets.fromLTRB(20, 0, 0, 20),
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(25),
-            color: const Color(0xff14648F),
+            color: const Color(0xff00BA8F),
           ),
           child: Column(
             children: [
